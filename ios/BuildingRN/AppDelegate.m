@@ -11,6 +11,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import "ReactNativeConfig.h"
 
 @implementation AppDelegate
 @synthesize oneSignal = _oneSignal;
@@ -19,7 +20,7 @@
 {
   NSURL *jsCodeLocation;
   self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions
-                                                       appId:@"bf2ed74a-aaf4-4255-b842-a9d9ebc673cb"];
+                                                       appId:@[ReactNativeConfig envFor:@"ONESIGNAL_ID"]];
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 
