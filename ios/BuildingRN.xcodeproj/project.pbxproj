@@ -928,7 +928,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eastcoastproduct.rntesting;
 				PRODUCT_NAME = BuildingRN;
-				PROVISIONING_PROFILE = "799c628a-28f4-4f1e-bd14-54b22734b766";
+				PROVISIONING_PROFILE = "4865079a-510f-44eb-8e95-2d4161dae5be";
 				PROVISIONING_PROFILE_SPECIFIER = "Ad Hod";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -964,7 +964,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eastcoastproduct.rntesting;
 				PRODUCT_NAME = BuildingRN;
-				PROVISIONING_PROFILE = "799c628a-28f4-4f1e-bd14-54b22734b766";
+				PROVISIONING_PROFILE = "4865079a-510f-44eb-8e95-2d4161dae5be";
 				PROVISIONING_PROFILE_SPECIFIER = "Ad Hod";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
