@@ -20,7 +20,7 @@
 {
   NSURL *jsCodeLocation;
   self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions
-                                                       appId:@[ReactNativeConfig envFor:@"ONESIGNAL_ID"]];
+                                                       appId:[ReactNativeConfig envFor:@"ONESIGNAL_ID"]];
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 
