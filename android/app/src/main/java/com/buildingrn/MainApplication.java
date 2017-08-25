@@ -3,6 +3,8 @@ package com.buildingrn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.RNFetchBlob.RNFetchBlobPackage;
+import com.reactnativedocumentpicker.ReactNativeDocumentPicker;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.facebook.react.ReactNativeHost;
@@ -24,9 +26,11 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-            new ReactNativeOneSignalPackage(),
-            new ReactNativeConfigPackage()
+        new MainReactPackage(),
+        new RNFetchBlobPackage(),
+        new ReactNativeDocumentPicker(),
+        new ReactNativeOneSignalPackage(),
+        new ReactNativeConfigPackage()
       );
     }
   };
