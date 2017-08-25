@@ -8,5 +8,7 @@ target 'BuildingRN' do
   # Pods for BuildingRN
   pod 'RSKImageCropper'
   pod 'QBImagePickerController'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 end
