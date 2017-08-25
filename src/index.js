@@ -9,7 +9,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import Config from 'react-native-config'
 
 import FileUpload from './components/FileUploadExample'
-// import ImagePicker from './components/ImagePickerExample'
+import ImagePicker from './components/ImagePickerExample'
 
 
 export default class App extends Component {
@@ -27,6 +27,7 @@ export default class App extends Component {
           Cmd+D or shake for dev menu
         </Text>
         <FileUpload />
+        <ImagePicker />
       </View>
     );
   }

@@ -18,7 +18,7 @@ class ImagePickerComponent extends Component {
       height: 400,
       cropping: true
     }).then(image => {
-      console.log(image);
+      this.handleUpload(null, image)
     });
   }
 
@@ -28,14 +28,14 @@ class ImagePickerComponent extends Component {
       height: 400,
       cropping: true
     }).then(image => {
-      console.log(image);
+      this.handleUpload(null, image)
     });
   }
 
   handleUpload (err, res) {
     if (err)
       console.log('oops')
-    let theUri = res.uri
+    let theUri = res.uri || res.path
     
     const toCheck = 'file://'
     
@@ -46,7 +46,7 @@ class ImagePickerComponent extends Component {
       'Content-Type' : 'multipart/form-data',
     }, [{
       name: 'file',
-      filename: res.fileName,
+      filename: res.fileName || res.filename || 'noname',
       data: RNFetchBlob.wrap(theUri)
     }])
     .uploadProgress({ count: 20 }, (written, total) => {
