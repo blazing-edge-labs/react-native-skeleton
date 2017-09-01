@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Text } from 'react-native'
+import { TouchableOpacity, Text, View } from 'react-native'
+
+import styles from './styles'
 
 class Button extends Component {
   constructor (props) {
@@ -7,11 +9,15 @@ class Button extends Component {
   }
 
   render () {
-    const { children } = this.props
+    const { children, onPress } = this.props
     return (
-      <Text>
-        {children}
-      </Text>
+      <TouchableOpacity onPress={onPress}>
+        <View style={styles.wrap}>
+          <Text style={styles.text}>
+            {children}
+          </Text>
+        </View>
+      </TouchableOpacity>
     )
   }
 }
