@@ -1,3 +1,7 @@
+export const hasError = meta => meta.touched && meta.error
+export const isSelected = (input, val) => input.value === val
+export const isChecked = input => input.value
+
 export const required = value => (value ? undefined : 'Required')
 
 export const maxLength = max => value =>

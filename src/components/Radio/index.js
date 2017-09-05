@@ -1,47 +1,32 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import PropTypes from 'prop-types'
 
+import { isSelected } from '../../utils/validations'
 import styles from './styles'
 
 // TODO: Talk with Andro, extra pixels at the top of circle
+const handlePress = (input, meta, val, onPress) => {
+  input.onChange(val)
 
-class Radio extends Component {
-  constructor (props) {
-    super(props)
+  typeof onPress === 'function' && onPress(val)
+}
 
-    this.handlePress = this.handlePress.bind(this)
-  }
+const Radio = ({ input, val, label, meta, onPress }) => {
+  const selected = isSelected(input, val)
 
-  handlePress () {
-    const { input, meta, val } = this.props
-    
-    input.onChange(val)
-  }
-
-  isSelected () {
-    const { input, val } = this.props
-
-    return input.value === val;
-  }
-
-  render () {
-    const { label } = this.props
-    const selected = this.isSelected()
-
-    return (
-      <TouchableOpacity onPress={this.handlePress}>
-        <View style={styles.wrap}>
-          <View style={[styles.outer, selected && styles.outerSelected]}>
-            {selected && <View style={styles.inner} />}
-          </View>
-          <Text style={styles.label}>
-            {label}
-          </Text>
+  return (
+    <TouchableOpacity onPress={() => handlePress(input, meta, val, onPress)}>
+      <View style={styles.wrap}>
+        <View style={[styles.outer, selected && styles.outerSelected]}>
+          {selected && <View style={styles.inner} />}
         </View>
-      </TouchableOpacity>
-    )
-  }
+        <Text style={styles.label}>
+          {label}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  )
 }
 
 Radio.propTypes = {

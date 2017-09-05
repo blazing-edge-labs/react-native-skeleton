@@ -2,6 +2,7 @@ import React from 'react'
 import { TextInput, View, Text } from 'react-native'
 import PropTypes from 'prop-types'
 
+import { hasError } from '../../utils/validations'
 import Label from '../Label'
 import styles from './styles'
 
@@ -10,7 +11,7 @@ import styles from './styles'
 const errorCheck = meta => meta.touched && meta.error
 
 const Input = ({ label, required, autoCapitalize, input, meta, multiline, ...rest }) => {
-  const isError = errorCheck(meta)
+  const isError = hasError(meta)
 
   return (
     <View>

@@ -7,6 +7,7 @@ import Button from '../components/Button'
 import Checkbox from '../components/Checkbox'
 import Label from '../components/Label'
 import ScrollView from '../components/ScrollView'
+import Select from '../components/Select'
 import TextInput from '../components/TextInput'
 import Radio from '../components/Radio'
 import { required, number } from '../utils/validations'
@@ -17,14 +18,21 @@ class FormExample extends Component {
   }
 
   formSubmit (values) {
-    throw new SubmissionError('test')
+    console.log(values)
   }
 
   render () {
     const { handleSubmit, error } = this.props
 
+    const options = [
+      { value: '', label: 'Valueless label' },
+      { value: '1', label: 'Longer label for one' },
+      { value: '2', label: 'Two' },
+      { value: '3', label: 'Three' }
+    ]
+
     return (
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1, margin: 10 }}>
         <Field
           name='testInput'
           label='Number input'
@@ -60,6 +68,11 @@ class FormExample extends Component {
           name='check2'
           label='Really'
           component={Checkbox}
+        />
+        <Field name='selectedValue'
+          options={options}
+          component={Select}
+          label={'Here goes the label'}
         />
         <Button
           onPress={handleSubmit(this.formSubmit)}
