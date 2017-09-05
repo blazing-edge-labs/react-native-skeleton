@@ -8,8 +8,6 @@ import styles from './styles'
 
 // TODO: Visual representation of required fields, focus state
 
-const errorCheck = meta => meta.touched && meta.error
-
 const Input = ({ label, required, autoCapitalize, input, meta, multiline, ...rest }) => {
   const isError = hasError(meta)
 
@@ -26,7 +24,7 @@ const Input = ({ label, required, autoCapitalize, input, meta, multiline, ...res
           value={input.value}
           style={[styles.input, multiline && styles.multiline]}
           multiline={multiline}
-          numberOfLines={multiline && 4 || 1}
+          numberOfLines={multiline ? 4 : 1}
           {...rest}
         />
       </View>

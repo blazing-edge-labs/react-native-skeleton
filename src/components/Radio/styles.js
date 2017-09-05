@@ -28,12 +28,5 @@ export default StyleSheet.create({
   },
   outerSelected: {
     backgroundColor: 'black'
-  },
-  label: {
-    flex: 1,
-    lineHeight: 24,
-    paddingLeft: 10,
-    color: colors.font,
-    fontSize: 16
   }
 })

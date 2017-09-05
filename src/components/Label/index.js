@@ -11,7 +11,8 @@ const Label = ({ children, error }) => (
 )
 
 Label.propTypes = {
-  children: PropTypes.string.isRequired
+  children: PropTypes.string.isRequired,
+  error: PropTypes.bool
 }
 
 export default Label

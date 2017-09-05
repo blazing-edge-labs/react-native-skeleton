@@ -29,14 +29,14 @@ class Select extends Component {
     const { input, onPress } = this.props
 
     this.setState({ value })
-    
+
     input.onChange(value)
-  
+
     typeof onPress === 'function' && onPress(value)
   }
 
   render () {
-    const { label, input, meta, required, options } = this.props
+    const { label, meta, options } = this.props
     const isError = hasError(meta)
 
     return (
@@ -44,9 +44,9 @@ class Select extends Component {
         <Label>{label}</Label>
         <View style={styles.holder}>
           { options && <Picker
-              style={styles.picker}
-              selectedValue={this.state.value}
-              onValueChange={this.handlePress}
+            style={styles.picker}
+            selectedValue={this.state.value}
+            onValueChange={this.handlePress}
             >
               {this.renderItems(options)}
             </Picker>
@@ -65,7 +65,6 @@ Select.propTypes = {
   label: PropTypes.string.isRequired,
   input: PropTypes.object.isRequired,
   meta: PropTypes.object.isRequired,
-  required: PropTypes.bool,
   onPress: PropTypes.func,
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,

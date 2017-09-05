@@ -17,11 +17,6 @@ export default StyleSheet.create({
     borderWidth: 2,
     paddingLeft: Platform.OS === 'ios' ? 10 : 0
   },
-  error: {
-    color: colors.error,
-    fontWeight: '700',
-    paddingLeft: 5
-  },
   text: {
     color: colors.textInput,
     fontSize: 16,
@@ -45,5 +40,5 @@ export default StyleSheet.create({
   error: {
     color: colors.error,
     minHeight: 30
-  },
+  }
 })

@@ -52,11 +52,11 @@ export class Select extends Component {
   }
 
   render () {
-    const { label, input, meta, options, required, theValue } = this.props
+    const { label, input, meta, options } = this.props
 
     const isError = hasError(meta)
 
-    const findValue = item => item.value == input.value
+    const findValue = item => item.value === input.value
     const val = options.find(findValue)
     const theLabel = val ? val.label : 'Choose your selection'
 
@@ -71,8 +71,8 @@ export class Select extends Component {
             <View style={styles.modal}>
               <View style={styles.modalContent}>
                 { options && <Picker
-                    selectedValue={input.value}
-                    onValueChange={(value) => this.handleClick(value)}
+                  selectedValue={input.value}
+                  onValueChange={(value) => this.handleClick(value)}
                   >
                     {this.renderItems(options)}
                   </Picker>
@@ -91,7 +91,7 @@ export class Select extends Component {
           {isError && meta.error}
         </Text>
       </View>
-      )
+    )
   }
 }
 
@@ -99,7 +99,6 @@ Select.propTypes = {
   label: PropTypes.string.isRequired,
   input: PropTypes.object.isRequired,
   meta: PropTypes.object.isRequired,
-  required: PropTypes.bool,
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired

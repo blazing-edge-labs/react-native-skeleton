@@ -35,7 +35,10 @@ Radio.propTypes = {
     PropTypes.string,
     PropTypes.number,
     PropTypes.bool
-  ])
+  ]),
+  onPress: PropTypes.func,
+  meta: PropTypes.object.isRequired,
+  input: PropTypes.object.isRequired
 }
 
 export default Radio

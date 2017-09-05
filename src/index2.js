@@ -4,16 +4,15 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { Component } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 import Config from 'react-native-config'
 
 import FileUpload from './components/FileUploadExample'
 import ImagePicker from './components/ImagePickerExample'
 
-
 export default class App extends Component {
-  render() {
+  render () {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
@@ -29,7 +28,7 @@ export default class App extends Component {
         <FileUpload />
         <ImagePicker />
       </View>
-    );
+    )
   }
 }
 
@@ -38,16 +37,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF'
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    margin: 10
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
-  },
-});
+    marginBottom: 5
+  }
+})

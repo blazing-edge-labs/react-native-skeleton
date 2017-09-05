@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Text } from 'react-native'
-import { Field, reduxForm, Form, SubmissionError } from 'redux-form'
+import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 
 import Button from '../components/Button'
@@ -13,16 +12,12 @@ import Radio from '../components/Radio'
 import { required, number } from '../utils/validations'
 
 class FormExample extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   formSubmit (values) {
     console.log(values)
   }
 
   render () {
-    const { handleSubmit, error } = this.props
+    const { handleSubmit } = this.props
 
     const options = [
       { value: '', label: 'Valueless label' },
@@ -49,13 +44,13 @@ class FormExample extends Component {
         <Field
           name='testRadio'
           label='Value 1'
-          val="1"
+          val='1'
           component={Radio}
         />
         <Field
           name='testRadio'
           label='A very very very very long long long long long label ed more text :('
-          val="2"
+          val='2'
           component={Radio}
         />
         <Label>Checkboxeees</Label>
@@ -87,7 +82,7 @@ class FormExample extends Component {
 export default connect(state => ({
   initialValues: {
     testInput2: 'One very very very very very very long long long long long long text',
-    testRadio: "2",
+    testRadio: '2',
     check2: true
   }
 }))(reduxForm({

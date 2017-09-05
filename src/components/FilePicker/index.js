@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Button } from 'react-native';
-import { DocumentPicker, DocumentPickerUtil } from 'react-native-document-picker';
+import { Button } from 'react-native'
+import { DocumentPicker, DocumentPickerUtil } from 'react-native-document-picker'
 
 class FilePicker extends Component {
   constructor (props) {
@@ -11,22 +11,22 @@ class FilePicker extends Component {
 
   onPressLearnMore () {
     const { callback } = this.props
+
     DocumentPicker.show({
-      filetype: [DocumentPickerUtil.allFiles()],
-    },(error, res) => {
-      if (error)
-        return callback(error)
+      filetype: [DocumentPickerUtil.allFiles()]
+    }, (error, res) => {
+      if (error) { return callback(error) }
       return callback(null, res)
-    });
+    })
   }
 
   render () {
     return (
       <Button
         onPress={this.onPressLearnMore}
-        title="Upload File"
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
+        title='Upload File'
+        color='#841584'
+        accessibilityLabel='Learn more about this purple button'
       />
     )
   }

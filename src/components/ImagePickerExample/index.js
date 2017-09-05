@@ -19,7 +19,7 @@ class ImagePickerComponent extends Component {
       cropping: true
     }).then(image => {
       this.handleUpload(null, image)
-    });
+    })
   }
 
   openGallery () {
@@ -29,21 +29,19 @@ class ImagePickerComponent extends Component {
       cropping: true
     }).then(image => {
       this.handleUpload(null, image)
-    });
+    })
   }
 
   handleUpload (err, res) {
-    if (err)
-      console.log('oops')
+    if (err) { console.log('oops') }
     let theUri = res.uri || res.path
-    
+
     const toCheck = 'file://'
-    
-    if (theUri.indexOf(toCheck) !== -1)
-      theUri = theUri.slice(toCheck.length)
+
+    if (theUri.indexOf(toCheck) !== -1) { theUri = theUri.slice(toCheck.length) }
 
     RNFetchBlob.fetch('POST', 'http://10.29.0.99:7878/upload', {
-      'Content-Type' : 'multipart/form-data',
+      'Content-Type': 'multipart/form-data'
     }, [{
       name: 'file',
       filename: res.fileName || res.filename || 'noname',
@@ -60,15 +58,15 @@ class ImagePickerComponent extends Component {
       <View>
         <Button
           onPress={this.openCamera}
-          title="Open Camera"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
+          title='Open Camera'
+          color='#841584'
+          accessibilityLabel='Learn more about this purple button'
         />
         <Button
           onPress={this.openGallery}
-          title="Open Gallery"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
+          title='Open Gallery'
+          color='#841584'
+          accessibilityLabel='Learn more about this purple button'
         />
       </View>
     )
