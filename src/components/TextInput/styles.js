@@ -6,10 +6,6 @@ export default StyleSheet.create({
     flex: 1,
     marginBottom: 20
   },
-  label: {
-    color: colors.font,
-    marginBottom: 5
-  },
   input: {
     minHeight: 40,
     fontSize: 16,
@@ -29,11 +25,7 @@ export default StyleSheet.create({
   errorWrapper: {
     borderColor: colors.error
   },
-  errorLabel: {
-    color: colors.error
-  },
   multiline: {
     textAlignVertical: 'top'
   }
-
 })

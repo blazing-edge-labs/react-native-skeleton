@@ -1,8 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { TextInput, View, Text } from 'react-native'
+import PropTypes from 'prop-types'
 
+import Label from '../Label'
 import styles from './styles'
+
+// TODO: Visual representation of required fields, focus state
 
 const errorCheck = meta => meta.touched && meta.error
 
@@ -11,9 +14,9 @@ const Input = ({ label, required, autoCapitalize, input, meta, multiline, ...res
 
   return (
     <View>
-      <Text style={[styles.label, isError && styles.errorLabel]}>
-        {label || ' '}
-      </Text>
+      <Label error={isError}>
+        {label}
+      </Label>
       <View style={[styles.inputWrapper, isError && styles.errorWrapper]}>
         <TextInput
           underlineColorAndroid='transparent'
@@ -31,6 +34,12 @@ const Input = ({ label, required, autoCapitalize, input, meta, multiline, ...res
       </Text>
     </View>
   )
+}
+
+Input.propTypes = {
+  label: PropTypes.string.isRequired,
+  input: PropTypes.object.isRequired,
+  meta: PropTypes.object.isRequired
 }
 
 export default Input
