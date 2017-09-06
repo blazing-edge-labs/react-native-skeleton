@@ -9,7 +9,8 @@ export default StyleSheet.create({
   label: {
     color: colors.font,
     marginBottom: 5,
-    fontSize: 16
+    fontSize: 16,
+    paddingLeft: 10
   },
   outer: {
     height: 24,
