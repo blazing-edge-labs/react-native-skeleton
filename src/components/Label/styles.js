@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '../../styles/variables'
+
+import { colors } from 'styles/variables'
 
 export default StyleSheet.create({
   label: {
     color: colors.font,
-    marginBottom: 5,
-    fontSize: 16,
-    fontWeight: 'bold'
+    marginBottom: 1,
+    fontSize: 14
   },
   error: {
     color: colors.error

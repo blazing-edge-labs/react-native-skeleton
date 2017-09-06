@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { View, Picker, Modal, TouchableWithoutFeedback, Text } from 'react-native'
 import PropTypes from 'prop-types'
 
-import { hasError } from '../../utils/validations'
-import Label from '../Label'
+import Label from 'components/Label'
+import { hasError } from 'utils/validations'
 import styles from './styles'
 
 export class Select extends Component {

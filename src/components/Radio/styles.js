@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '../../styles/variables'
+
+import { colors } from 'styles/variables'
 
 export default StyleSheet.create({
   wrap: {
@@ -10,7 +11,8 @@ export default StyleSheet.create({
     color: colors.font,
     marginBottom: 5,
     fontSize: 16,
-    paddingLeft: 10
+    paddingLeft: 10,
+    alignItems: 'center'
   },
   outer: {
     height: 24,

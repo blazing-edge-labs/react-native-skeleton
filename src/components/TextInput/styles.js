@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '../../styles/variables'
+
+import { colors } from 'styles/variables'
 
 export default StyleSheet.create({
   wrap: {
@@ -7,10 +8,11 @@ export default StyleSheet.create({
     marginBottom: 20
   },
   input: {
-    minHeight: 40,
+    height: 40,
     fontSize: 16,
-    margin: 0,
-    padding: 10,
+    lineHeight: 24,
+    paddingHorizontal: 10,
+    alignItems: 'center',
     color: '#000000'
   },
   inputWrapper: {
@@ -20,12 +22,15 @@ export default StyleSheet.create({
   },
   error: {
     color: colors.error,
+    fontSize: 14,
     minHeight: 30
   },
   errorWrapper: {
     borderColor: colors.error
   },
   multiline: {
-    textAlignVertical: 'top'
+    textAlignVertical: 'top',
+    height: 120,
+    alignItems: 'flex-start'
   }
 })

@@ -1,3 +1,5 @@
+// TODO: Clean validations.js file
+
 export const hasError = meta => meta.touched && meta.error
 export const isSelected = (input, val) => input.value === val
 export const isChecked = input => input.value
@@ -21,9 +23,6 @@ export const email = value =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
     ? 'Invalid email address'
     : undefined
-
-export const tooOld = value =>
-  value && value > 65 ? 'You might be too old for this' : undefined
 
 export const alphaNumeric = value =>
   value && /[^a-zA-Z0-9 ]/i.test(value)

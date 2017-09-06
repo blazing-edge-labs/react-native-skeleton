@@ -2,10 +2,12 @@ import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import PropTypes from 'prop-types'
 
-import { isSelected } from '../../utils/validations'
+import { isSelected } from 'utils/validations'
 import styles from './styles'
 
-// TODO: Talk with Andro, extra pixels at the top of circle
+// TODO: Talk with Andro, extra pixels
+// TODO: Disabled
+
 const handlePress = (input, meta, val, onPress) => {
   input.onChange(val)
 

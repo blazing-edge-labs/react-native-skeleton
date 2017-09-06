@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 
 import styles from './styles'
 
+// TODO: Disabled
+
 const Button = ({ onPress, children }) => {
   return (
     <TouchableOpacity onPress={onPress}>

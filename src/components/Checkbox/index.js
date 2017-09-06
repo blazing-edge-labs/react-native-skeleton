@@ -3,8 +3,11 @@ import { View, TouchableOpacity, Text } from 'react-native'
 import PropTypes from 'prop-types'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import { isChecked } from '../../utils/validations'
+import { isChecked } from 'utils/validations'
 import styles from './styles'
+
+// TODO: Talk with Andro, extra pixels
+// TODO: Disabled
 
 const handlePress = (input, onPress) => {
   const { value } = input

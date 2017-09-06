@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RNFetchBlob from 'react-native-fetch-blob'
+
 import FilePicker from '../FilePicker'
 
 class FileUpload extends Component {

@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '../../styles/variables'
+
+import { colors } from 'styles/variables'
 
 export default StyleSheet.create({
   wrap: {
@@ -10,7 +11,8 @@ export default StyleSheet.create({
     color: colors.font,
     marginBottom: 5,
     fontSize: 16,
-    paddingLeft: 10
+    marginLeft: 10,
+    flex: 1
   },
   outer: {
     height: 24,
@@ -26,8 +28,6 @@ export default StyleSheet.create({
   },
   checked: {
     fontSize: 16,
-    color: 'white',
-    bottom: 2,
-    right: 1
+    color: 'white'
   }
 })

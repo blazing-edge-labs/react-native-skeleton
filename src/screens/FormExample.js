@@ -2,14 +2,16 @@ import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 
-import Button from '../components/Button'
-import Checkbox from '../components/Checkbox'
-import Label from '../components/Label'
-import ScrollView from '../components/ScrollView'
-import Select from '../components/Select'
-import TextInput from '../components/TextInput'
-import Radio from '../components/Radio'
-import { required, number } from '../utils/validations'
+import Button from 'components/Button'
+import Checkbox from 'components/Checkbox'
+import DatePicker from 'components/DatePicker'
+import Label from 'components/Label'
+import ScrollView from 'components/ScrollView'
+import Select from 'components/Select'
+import TextInput from 'components/TextInput'
+import TimePicker from 'components/TimePicker'
+import Radio from 'components/Radio'
+import { required, number } from 'utils/validations'
 
 class FormExample extends Component {
   formSubmit (values) {
@@ -68,6 +70,14 @@ class FormExample extends Component {
           options={options}
           component={Select}
           label={'Here goes the label'}
+        />
+        <Field name='datePickerValue'
+          component={DatePicker}
+          label={'The Date picker'}
+        />
+        <Field name='timePickerValue'
+          component={TimePicker}
+          label={'The Time picker'}
         />
         <Button
           onPress={handleSubmit(this.formSubmit)}
