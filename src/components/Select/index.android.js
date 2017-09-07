@@ -37,7 +37,7 @@ class Select extends Component {
   }
 
   render () {
-    const { label, meta, options } = this.props
+    const { label, meta, options, mode } = this.props
     const isError = hasError(meta)
 
     return (
@@ -48,6 +48,7 @@ class Select extends Component {
             style={styles.picker}
             selectedValue={this.state.value}
             onValueChange={this.handlePress}
+            mode={mode}
             >
               {this.renderItems(options)}
             </Picker>
@@ -60,6 +61,10 @@ class Select extends Component {
   }
 }
 
+Select.defaultProps = {
+  mode: 'dialog'
+}
+
 Select.propTypes = {
   label: PropTypes.string.isRequired,
   input: PropTypes.object.isRequired,
@@ -68,7 +73,8 @@ Select.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired
-  }))
+  })),
+  mode: PropTypes.string
 }
 
 export default Select

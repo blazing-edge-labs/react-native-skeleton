@@ -9,6 +9,8 @@ import { formatDate } from 'utils/formatDate'
 import { hasError } from 'utils/validations'
 import styles from './styles'
 
+// TODO: Disabled
+
 export class DatePicker extends Component {
   constructor (props) {
     super(props)

@@ -11,6 +11,7 @@ import { formatDate } from 'utils/formatDate'
 import styles from './styles'
 
 // TODO: Check if bug has been fixed on Android when choosing a >2039 year
+// TODO: Disabled
 
 export class DatePicker extends Component {
   constructor (props) {

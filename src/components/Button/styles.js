@@ -1,8 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { colors, sizes } from 'styles/variables'
 
-// TODO: Disabled
-
 export default StyleSheet.create({
   wrap: {
     width: 150,
@@ -16,5 +14,12 @@ export default StyleSheet.create({
     color: colors.font,
     padding: 10,
     alignSelf: 'center'
+  },
+  wrapDisabled: {
+    backgroundColor: '#F2F2F2',
+    borderColor: '#DBDBDB'
+  },
+  textDisabled: {
+    color: '#DBDBDB'
   }
 })

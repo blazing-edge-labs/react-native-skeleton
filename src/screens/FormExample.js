@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { View } from 'react-native'
 import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 
@@ -26,7 +27,17 @@ class FormExample extends Component {
       { value: '', label: 'Valueless label' },
       { value: '1', label: 'Longer label for one' },
       { value: '2', label: 'Two' },
-      { value: '3', label: 'Three' }
+      { value: '34', label: 'Three' },
+      { value: '35', label: 'Hhhh' },
+      { value: '66', label: 'Hhhh' },
+      { value: '5', label: 'Hhhh' },
+      { value: '32', label: 'Hhhh' },
+      { value: '31', label: 'Hhhh' },
+      { value: '320', label: 'Hhhh' },
+      { value: '51', label: 'Hhhh' },
+      { value: '322', label: 'Hhhh' },
+      { value: '321', label: 'Hhhh' },
+      { value: '310', label: 'Hhhh' },
     ]
 
     return (
@@ -62,6 +73,20 @@ class FormExample extends Component {
           val='3'
           component={Radio}
         />
+        <Field
+          name='testRadio'
+          label='Disabled'
+          val='4'
+          disabled
+          component={Radio}
+        />
+        <Field
+          name='testRadio'
+          label='Disabled active'
+          val='5'
+          disabled
+          component={Radio}
+        />
         <InlineError />
         <Label>Checkboxeees</Label>
         <Field
@@ -74,11 +99,29 @@ class FormExample extends Component {
           label='Really'
           component={Checkbox}
         />
+        <Field
+          name='check3'
+          label='Disabled'
+          disabled
+          component={Checkbox}
+        />
+        <Field
+          name='check4'
+          label='Disabled checked'
+          disabled
+          component={Checkbox}
+        />
         <InlineError />
         <Field name='selectedValue'
           options={options}
           component={Select}
-          label={'Here goes the label'}
+          label='Select'
+        />
+        <Field name='selectedValue'
+          options={options}
+          component={Select}
+          mode='dropdown'
+          label='Select - Android specific dropdown'
         />
         <Field name='datePickerValue'
           component={DatePicker}
@@ -88,11 +131,19 @@ class FormExample extends Component {
           component={TimePicker}
           label={'The Time picker'}
         />
-        <Button
-          onPress={handleSubmit(this.formSubmit)}
-        >
-          Submit
-        </Button>
+        <View style={{ flexDirection: 'row' }}>
+          <Button
+            onPress={handleSubmit(this.formSubmit)}
+            disabled
+          >
+            Disabled?
+          </Button>
+          <Button
+            onPress={handleSubmit(this.formSubmit)}
+          >
+            Submit
+          </Button>
+        </View>
       </ScrollView>
     )
   }
@@ -101,8 +152,9 @@ class FormExample extends Component {
 export default connect(state => ({
   initialValues: {
     testInput2: 'One very very very very very very long long long long long long text',
-    testRadio: '2',
-    check2: true
+    testRadio: '5',
+    check2: true,
+    check4: true
   }
 }))(reduxForm({
   form: 'example'

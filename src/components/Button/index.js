@@ -4,13 +4,14 @@ import PropTypes from 'prop-types'
 
 import styles from './styles'
 
-// TODO: Disabled
-
-const Button = ({ onPress, children }) => {
+const Button = ({ onPress, children, disabled }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View style={styles.wrap}>
-        <Text style={styles.text}>
+    <TouchableOpacity
+      onPress={() => !disabled && onPress()}
+      activeOpacity={!disabled ? 0.2 : 1}
+    >
+      <View style={[styles.wrap, disabled && styles.wrapDisabled]}>
+        <Text style={[styles.text, disabled && styles.textDisabled]}>
           {children}
         </Text>
       </View>
@@ -20,7 +21,8 @@ const Button = ({ onPress, children }) => {
 
 Button.propTypes = {
   children: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired
+  onPress: PropTypes.func.isRequired,
+  disabled: PropTypes.bool
 }
 
 export default Button

@@ -30,5 +30,14 @@ export default StyleSheet.create({
   },
   outerSelected: {
     backgroundColor: 'black'
+  },
+  outerDisabled: {
+    borderColor: colors.disabledDarker
+  },
+  outerSelectedDisabled: {
+    backgroundColor: colors.disabledDarker
+  },
+  labelDisabled: {
+    color: colors.disabledDarker
   }
 })

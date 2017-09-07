@@ -14,16 +14,23 @@ const handlePress = (input, meta, val, onPress) => {
   typeof onPress === 'function' && onPress(val)
 }
 
-const Radio = ({ input, val, label, meta, onPress }) => {
+const Radio = ({ input, val, label, meta, onPress, disabled }) => {
   const selected = isSelected(input, val)
 
   return (
-    <TouchableOpacity onPress={() => handlePress(input, meta, val, onPress)}>
+    <TouchableOpacity
+      onPress={() => !disabled && handlePress(input, meta, val, onPress)}
+      activeOpacity={!disabled ? 0.2 : 1}
+    >
       <View style={styles.wrap}>
-        <View style={[styles.outer, selected && styles.outerSelected]}>
+        <View style={[
+          styles.outer,
+          disabled && styles.outerDisabled,
+          selected && (!disabled ? styles.outerSelected : styles.outerSelectedDisabled)
+        ]}>
           {selected && <View style={styles.inner} />}
         </View>
-        <Text style={styles.label}>
+        <Text style={[styles.label, disabled && styles.labelDisabled]}>
           {label}
         </Text>
       </View>
@@ -40,7 +47,8 @@ Radio.propTypes = {
   ]),
   onPress: PropTypes.func,
   meta: PropTypes.object.isRequired,
-  input: PropTypes.object.isRequired
+  input: PropTypes.object.isRequired,
+  disabled: PropTypes.bool
 }
 
 export default Radio

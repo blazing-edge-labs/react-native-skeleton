@@ -7,7 +7,6 @@ import { isChecked } from 'utils/validations'
 import styles from './styles'
 
 // TODO: Talk with Andro, extra pixels
-// TODO: Disabled
 
 const handlePress = (input, onPress) => {
   const { value } = input
@@ -16,18 +15,25 @@ const handlePress = (input, onPress) => {
   typeof onPress === 'function' && onPress(!value)
 }
 
-const Checkbox = ({ input, onPress, label }) => {
+const Checkbox = ({ input, onPress, label, disabled }) => {
   const checked = isChecked(input)
 
   return (
     <TouchableOpacity
-      onPress={() => handlePress(input, onPress)}
+      onPress={() => !disabled && handlePress(input, onPress)}
+      activeOpacity={!disabled ? 0.2 : 1}
     >
       <View style={styles.wrap}>
-        <View style={[styles.outer, checked && styles.outerSelected]}>
-          <Text>{checked && <Icon style={styles.checked} name='check' />}</Text>
+        <View style={[
+          styles.outer,
+          disabled && styles.outerDisabled,
+          checked && (disabled ? styles.outerSelectedDisabled : styles.outerSelected)
+        ]}>
+          <Text>
+            {checked && <Icon style={[styles.check, disabled && styles.checkDisabled]} name='check' />}
+          </Text>
         </View>
-        <Text style={styles.label}>
+        <Text style={[styles.label, disabled && styles.labelDisabled]}>
           {label}
         </Text>
       </View>
@@ -38,7 +44,8 @@ const Checkbox = ({ input, onPress, label }) => {
 Checkbox.propTypes = {
   label: PropTypes.string,
   input: PropTypes.object.isRequired,
-  onPress: PropTypes.func
+  onPress: PropTypes.func,
+  disabled: PropTypes.bool
 }
 
 export default Checkbox

@@ -3,7 +3,9 @@
 
 export const colors = {
   font: '#000000',
-  error: '#8A0011'
+  error: '#8A0011',
+  disabledLighter: '#F2F2F2',
+  disabledDarker: '#DBDBDB'
 }
 
 export const sizes = {
