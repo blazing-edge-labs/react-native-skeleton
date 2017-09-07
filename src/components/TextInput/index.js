@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInput, View, Text } from 'react-native'
+import { TextInput, View } from 'react-native'
 import PropTypes from 'prop-types'
 
 import Label from 'components/Label'
@@ -8,7 +8,6 @@ import { hasError } from 'utils/validations'
 import styles from './styles'
 
 // TODO: Visual representation of required fields, focus state
-// TODO: Disabled field
 
 const Input = ({ label, required, autoCapitalize, input, meta, multiline, disabled, ...rest }) => {
   const isError = hasError(meta)
@@ -43,7 +42,8 @@ const Input = ({ label, required, autoCapitalize, input, meta, multiline, disabl
 Input.propTypes = {
   label: PropTypes.string.isRequired,
   input: PropTypes.object.isRequired,
-  meta: PropTypes.object.isRequired
+  meta: PropTypes.object.isRequired,
+  disabled: PropTypes.bool
 }
 
 export default Input

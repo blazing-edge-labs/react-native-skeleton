@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 import Label from 'components/Label'
 import InlineError from 'components/InlineError'
-import { hasError } from 'utils/validations'
 import styles from './styles'
 
 // TODO: Disabled
@@ -57,8 +56,6 @@ export class Select extends Component {
 
   render () {
     const { label, input, meta, options } = this.props
-
-    const isError = hasError(meta)
 
     const findValue = item => item.value === input.value
     const val = options.find(findValue)

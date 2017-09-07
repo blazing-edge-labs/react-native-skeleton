@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { View, Picker, Text } from 'react-native'
+import { View, Picker } from 'react-native'
 import PropTypes from 'prop-types'
 
 import Label from 'components/Label'
 import InlineError from 'components/InlineError'
-import { hasError } from 'utils/validations'
 import styles from './styles'
 
 // TODO: Disabled
@@ -40,7 +39,6 @@ class Select extends Component {
 
   render () {
     const { label, meta, options, mode } = this.props
-    const isError = hasError(meta)
 
     return (
       <View style={styles.wrap}>

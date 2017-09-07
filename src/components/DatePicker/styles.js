@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, sizes } from 'styles/variables'
+import { sizes } from 'styles/variables'
 
 export default StyleSheet.create({
   wrap: {

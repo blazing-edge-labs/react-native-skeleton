@@ -4,7 +4,7 @@ import { colors, sizes } from 'styles/variables'
 
 export default StyleSheet.create({
   wrap: {
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   label: {
     color: colors.font,

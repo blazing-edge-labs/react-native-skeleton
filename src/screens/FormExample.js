@@ -37,7 +37,7 @@ class FormExample extends Component {
       { value: '51', label: 'Hhhh' },
       { value: '322', label: 'Hhhh' },
       { value: '321', label: 'Hhhh' },
-      { value: '310', label: 'Hhhh' },
+      { value: '310', label: 'Hhhh' }
     ]
 
     return (
