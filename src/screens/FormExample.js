@@ -54,6 +54,19 @@ class FormExample extends Component {
           component={TextInput}
           multiline
         />
+        <Field
+          name='testInputDisabled'
+          label='Disabled input'
+          disabled
+          component={TextInput}
+        />
+        <Field
+          name='testInput2Disabled'
+          label='Text Area InputDisabled'
+          disabled
+          component={TextInput}
+          multiline
+        />
         <Label>Choose your age</Label>
         <Field
           name='testRadio'
@@ -96,7 +109,7 @@ class FormExample extends Component {
         />
         <Field
           name='check2'
-          label='Really'
+          label='ReallyReally ReallyReallyReallyReally Rly Rly Rly ReallyReallyReally Really ReallyReally'
           component={Checkbox}
         />
         <Field
@@ -152,6 +165,7 @@ class FormExample extends Component {
 export default connect(state => ({
   initialValues: {
     testInput2: 'One very very very very very very long long long long long long text',
+    testInputDisabled: 'Try to change me',
     testRadio: '5',
     check2: true,
     check4: true

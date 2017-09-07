@@ -27,5 +27,12 @@ export default StyleSheet.create({
     textAlignVertical: 'top',
     height: 120,
     alignItems: 'flex-start'
+  },
+  inputWrapperDisabled: {
+    borderColor: colors.disabledDarker,
+    backgroundColor: colors.disabledLighter
+  },
+  inputDisabled: {
+    color: colors.disabledDarker
   }
 })

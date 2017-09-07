@@ -1270,10 +1270,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eastcoastproduct.rntesting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eastcoastproduct.reactnative.skeleton;
 				PRODUCT_NAME = BuildingRN;
-				PROVISIONING_PROFILE = "3603b477-363a-4d49-b905-8b40372dedbd";
-				PROVISIONING_PROFILE_SPECIFIER = "Ad Hod";
+				PROVISIONING_PROFILE = "b429d11a-4048-4540-b376-a51783bf892d";
+				PROVISIONING_PROFILE_SPECIFIER = "RN Skeleton Ad Hoc";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1317,10 +1317,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eastcoastproduct.rntesting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eastcoastproduct.reactnative.skeleton;
 				PRODUCT_NAME = BuildingRN;
-				PROVISIONING_PROFILE = "4865079a-510f-44eb-8e95-2d4161dae5be";
-				PROVISIONING_PROFILE_SPECIFIER = "Ad Hod";
+				PROVISIONING_PROFILE = "b429d11a-4048-4540-b376-a51783bf892d";
+				PROVISIONING_PROFILE_SPECIFIER = "RN Skeleton Ad Hoc";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

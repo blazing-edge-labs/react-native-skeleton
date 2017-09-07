@@ -10,7 +10,7 @@ import styles from './styles'
 // TODO: Visual representation of required fields, focus state
 // TODO: Disabled field
 
-const Input = ({ label, required, autoCapitalize, input, meta, multiline, ...rest }) => {
+const Input = ({ label, required, autoCapitalize, input, meta, multiline, disabled, ...rest }) => {
   const isError = hasError(meta)
 
   return (
@@ -18,14 +18,19 @@ const Input = ({ label, required, autoCapitalize, input, meta, multiline, ...res
       <Label error={isError}>
         {label}
       </Label>
-      <View style={[styles.inputWrapper, isError && styles.errorWrapper]}>
+      <View style={[
+        styles.inputWrapper,
+        disabled && styles.inputWrapperDisabled,
+        isError && styles.errorWrapper
+      ]}>
         <TextInput
           underlineColorAndroid='transparent'
           autoCapitalize={autoCapitalize || 'words'}
           onChange={input.onChange}
           value={input.value}
-          style={[styles.input, multiline && styles.multiline]}
+          style={[styles.input, multiline && styles.multiline, disabled && styles.inputDisabled]}
           multiline={multiline}
+          editable={!disabled}
           numberOfLines={multiline ? 4 : 1}
           {...rest}
         />

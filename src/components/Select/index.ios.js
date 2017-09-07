@@ -7,6 +7,9 @@ import InlineError from 'components/InlineError'
 import { hasError } from 'utils/validations'
 import styles from './styles'
 
+// TODO: Disabled
+// TODO: Add dropdown arrow on the right side
+
 export class Select extends Component {
   constructor (props) {
     super(props)
