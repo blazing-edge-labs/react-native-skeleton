@@ -5,3 +5,8 @@ export const colors = {
   font: '#000000',
   error: '#8A0011'
 }
+
+export const sizes = {
+  font: 16,
+  smallFont: 14
+}

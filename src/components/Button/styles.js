@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native'
-import { colors } from 'styles/variables'
+import { colors, sizes } from 'styles/variables'
+
+// TODO: Disabled
 
 export default StyleSheet.create({
   wrap: {
@@ -10,7 +12,7 @@ export default StyleSheet.create({
     borderColor: colors.font
   },
   text: {
-    fontSize: 16,
+    fontSize: sizes.font,
     color: colors.font,
     padding: 10,
     alignSelf: 'center'

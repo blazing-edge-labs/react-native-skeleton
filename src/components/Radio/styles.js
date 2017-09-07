@@ -1,16 +1,15 @@
 import { StyleSheet } from 'react-native'
 
-import { colors } from 'styles/variables'
+import { colors, sizes } from 'styles/variables'
 
 export default StyleSheet.create({
   wrap: {
     flexDirection: 'row',
-    marginBottom: 5
   },
   label: {
     color: colors.font,
     marginBottom: 5,
-    fontSize: 16,
+    fontSize: sizes.font,
     paddingLeft: 10,
     alignItems: 'center'
   },
@@ -19,7 +18,7 @@ export default StyleSheet.create({
     width: 24,
     borderRadius: 12,
     borderWidth: 2,
-    borderColor: '#000',
+    borderColor: 'black',
     alignItems: 'center',
     justifyContent: 'center'
   },

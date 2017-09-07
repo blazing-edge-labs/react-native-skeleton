@@ -3,6 +3,7 @@ import { TextInput, View, Text } from 'react-native'
 import PropTypes from 'prop-types'
 
 import Label from 'components/Label'
+import InlineError from 'components/InlineError'
 import { hasError } from 'utils/validations'
 import styles from './styles'
 
@@ -29,9 +30,7 @@ const Input = ({ label, required, autoCapitalize, input, meta, multiline, ...res
           {...rest}
         />
       </View>
-      <Text style={styles.error}>
-        {isError && meta.error}
-      </Text>
+      <InlineError meta={meta} />
     </View>
   )
 }

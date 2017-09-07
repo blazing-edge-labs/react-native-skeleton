@@ -5,6 +5,7 @@ import moment from 'moment'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import Label from 'components/Label'
+import InlineError from 'components/InlineError'
 import { hasError } from 'utils/validations'
 import { formatDate } from 'utils/formatDate'
 import styles from './styles'
@@ -47,9 +48,7 @@ export class DatePicker extends Component {
             <Icon style={styles.icon} name='calendar' />
           </View>
         </TouchableOpacity>
-        <Text style={styles.error}>
-          {isError && meta.error}
-        </Text>
+        <InlineError meta={meta} />
       </View>
     )
   }

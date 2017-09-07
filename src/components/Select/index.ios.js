@@ -3,6 +3,7 @@ import { View, Picker, Modal, TouchableWithoutFeedback, Text } from 'react-nativ
 import PropTypes from 'prop-types'
 
 import Label from 'components/Label'
+import InlineError from 'components/InlineError'
 import { hasError } from 'utils/validations'
 import styles from './styles'
 
@@ -87,9 +88,7 @@ export class Select extends Component {
             {theLabel}
           </Text>
         </View>
-        <Text style={styles.error}>
-          {isError && meta.error}
-        </Text>
+        <InlineError meta={meta} />
       </View>
     )
   }

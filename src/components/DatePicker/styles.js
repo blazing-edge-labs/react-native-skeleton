@@ -1,18 +1,18 @@
 import { StyleSheet } from 'react-native'
-import { colors } from 'styles/variables'
+import { colors, sizes } from 'styles/variables'
 
 export default StyleSheet.create({
   wrap: {
     flex: 1
   },
   holder: {
-    borderBottomColor: colors.borderInput,
+    borderBottomColor: 'black',
     borderBottomWidth: 1,
     flexDirection: 'row'
   },
   dateText: {
     color: 'black',
-    fontSize: 16,
+    fontSize: sizes.font,
     height: 30
   },
   icon: {
@@ -20,11 +20,6 @@ export default StyleSheet.create({
     color: 'black',
     marginLeft: 10,
     height: 20
-  },
-  error: {
-    color: colors.error,
-    fontSize: 14,
-    minHeight: 30
   },
   modal: {
     flex: 1,

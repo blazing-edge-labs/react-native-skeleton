@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import moment from 'moment'
 
 import Label from 'components/Label'
+import InlineError from 'components/InlineError'
 import { hasError } from 'utils/validations'
 import styles from './styles'
 
@@ -45,9 +46,7 @@ export class TimePicker extends Component {
             </Text>
           </View>
         </TouchableOpacity>
-        <Text style={styles.error}>
-          {isError && meta.error}
-        </Text>
+        <InlineError meta={meta} />
       </View>
     )
   }

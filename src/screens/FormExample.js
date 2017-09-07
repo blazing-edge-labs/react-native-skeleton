@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Button from 'components/Button'
 import Checkbox from 'components/Checkbox'
 import DatePicker from 'components/DatePicker'
+import InlineError from 'components/InlineError'
 import Label from 'components/Label'
 import ScrollView from 'components/ScrollView'
 import Select from 'components/Select'
@@ -29,7 +30,7 @@ class FormExample extends Component {
     ]
 
     return (
-      <ScrollView style={{ flex: 1, margin: 10 }}>
+      <ScrollView style={{ flex: 1, margin: 10, marginBottom: 0 }}>
         <Field
           name='testInput'
           label='Number input'
@@ -55,6 +56,13 @@ class FormExample extends Component {
           val='2'
           component={Radio}
         />
+        <Field
+          name='testRadio'
+          label='A very very very very long long long long long label ed more text :('
+          val='3'
+          component={Radio}
+        />
+        <InlineError />
         <Label>Checkboxeees</Label>
         <Field
           name='check1'
@@ -66,6 +74,7 @@ class FormExample extends Component {
           label='Really'
           component={Checkbox}
         />
+        <InlineError />
         <Field name='selectedValue'
           options={options}
           component={Select}

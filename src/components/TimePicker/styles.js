@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors } from 'styles/variables'
+import { colors, sizes } from 'styles/variables'
 
 export default StyleSheet.create({
   wrap: {
@@ -11,14 +11,9 @@ export default StyleSheet.create({
     flexDirection: 'row'
   },
   dateText: {
-    fontSize: 16,
+    fontSize: sizes.font,
     color: 'black',
     height: 30
-  },
-  error: {
-    color: colors.error,
-    fontSize: 14,
-    minHeight: 30
   },
   modal: {
     flex: 1,

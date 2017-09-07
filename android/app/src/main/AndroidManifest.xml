@@ -33,7 +33,7 @@
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="921e06b074fdd2155670b878f97a62696ed33e41" />
+            android:value="4e67d63356a7e8060d353c705bd205f387956885" />
     </application>
 
 </manifest>

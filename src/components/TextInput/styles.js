@@ -13,17 +13,12 @@ export default StyleSheet.create({
     lineHeight: 24,
     paddingHorizontal: 10,
     alignItems: 'center',
-    color: '#000000'
+    color: 'black'
   },
   inputWrapper: {
     borderWidth: 1,
     borderRadius: 1,
-    borderColor: '#000000'
-  },
-  error: {
-    color: colors.error,
-    fontSize: 14,
-    minHeight: 30
+    borderColor: 'black'
   },
   errorWrapper: {
     borderColor: colors.error

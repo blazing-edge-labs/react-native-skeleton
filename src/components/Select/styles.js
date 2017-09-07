@@ -1,34 +1,27 @@
 import { StyleSheet, Platform } from 'react-native'
 
-import { colors } from 'styles/variables'
+import { colors, sizes } from 'styles/variables'
 
 export default StyleSheet.create({
   wrap: {
-    flex: 1,
-    paddingBottom: 10
-  },
-  label: {
-    color: colors.font
-  },
-  asterisk: {
-    color: colors.main
+    flex: 1
   },
   holder: {
-    borderColor: colors.borderInput,
-    borderWidth: 2,
-    paddingLeft: Platform.OS === 'ios' ? 10 : 0
+    borderBottomColor: colors.borderInput,
+    borderBottomWidth: 1
   },
   text: {
     color: colors.textInput,
-    fontSize: 16,
+    fontSize: sizes.font,
     textAlign: 'left',
     lineHeight: 40,
-    height: 40
+    height: 40,
   },
   picker: {
     color: colors.textInput,
     height: 40,
-    paddingBottom: 5
+    paddingBottom: 5,
+    marginLeft: -7
   },
   modal: {
     flex: 1,
@@ -37,9 +30,5 @@ export default StyleSheet.create({
   },
   modalContent: {
     backgroundColor: 'white'
-  },
-  error: {
-    color: colors.error,
-    minHeight: 30
   }
 })
