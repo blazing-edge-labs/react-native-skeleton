@@ -133,10 +133,10 @@ android {
     signingConfigs {
         release {
             if (System.getenv()["CI"]) { // CI=true is exported by Nevercode
-                storeFile file(System.getenv()["NC_KEYSTORE_PATH"])
-                storePassword System.getenv()["NC_KEYSTORE_PASSWORD"]
-                keyAlias System.getenv()["NC_KEY_ALIAS"]
-                keyPassword System.getenv()["NC_KEY_PASSWORD"]
+                storeFile file(System.getenv()["BITRISE_SOURCE_DIR"] + "/keystores/my_keystore.jks")
+                storePassword System.getenv()["BITRISEIO_ANDROID_KEYSTORE_PASSWORD"]
+                keyAlias System.getenv()["BITRISEIO_ANDROID_KEYSTORE_ALIAS"]
+                keyPassword System.getenv()["BITRISEIO_ANDROID_KEYSTORE_PRIVATE_KEY_PASSWORD"]
             } else {
                 storeFile file("release.keystore")
                 storePassword "Password123"
