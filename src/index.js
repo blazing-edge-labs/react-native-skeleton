@@ -6,11 +6,14 @@
 
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
+import codePush from 'react-native-code-push'
 
 import store from './reducers'
 import FormExample from './screens/FormExample'
 
-export default class App extends Component {
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
+
+class App extends Component {
   render () {
     return (
       <Provider store={store}>
@@ -19,3 +22,5 @@ export default class App extends Component {
     )
   }
 }
+
+export default codePush(codePushOptions)(App)
