@@ -22,6 +22,15 @@
     <string>????</string>
     <key>CFBundleVersion</key>
     <string>1</string>
+		<key>CFBundleURLTypes</key>
+		<array>
+			<dict>
+				<key>CFBundleURLSchemes</key>
+				<array>
+					<string>skeleton</string>
+				</array>
+			</dict>
+		</array>
     <key>Fabric</key>
     <dict>
       <key>APIKey</key>
