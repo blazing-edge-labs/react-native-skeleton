@@ -4,12 +4,10 @@ import PropTypes from 'prop-types'
 
 import Label from 'components/Label'
 import InlineError from 'components/InlineError'
-import { hasError } from 'utils/validations'
+import { hasError } from 'utils/validator'
 import styles from './styles'
 
-// TODO: Visual representation of required fields, focus state
-
-const Input = ({ label, required, autoCapitalize, input, meta, multiline, disabled, ...rest }) => {
+const Input = ({ label, autoCapitalize, input, meta, multiline, disabled, keyboardType, ...rest }) => {
   const isError = hasError(meta)
 
   return (
@@ -31,6 +29,7 @@ const Input = ({ label, required, autoCapitalize, input, meta, multiline, disabl
           multiline={multiline}
           editable={!disabled}
           numberOfLines={multiline ? 4 : 1}
+          keyboardType={keyboardType || 'default'}
           {...rest}
         />
       </View>
@@ -43,7 +42,8 @@ Input.propTypes = {
   label: PropTypes.string.isRequired,
   input: PropTypes.object.isRequired,
   meta: PropTypes.object.isRequired,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  keyboardType: PropTypes.string
 }
 
 export default Input

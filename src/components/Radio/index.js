@@ -2,11 +2,8 @@ import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import PropTypes from 'prop-types'
 
-import { isSelected } from 'utils/validations'
+import { isSelected } from 'utils/validator'
 import styles from './styles'
-
-// TODO: Talk with Andro, extra pixels
-// TODO: Disabled
 
 const handlePress = (input, meta, val, onPress) => {
   input.onChange(val)
@@ -20,7 +17,7 @@ const Radio = ({ input, val, label, meta, onPress, disabled }) => {
   return (
     <TouchableOpacity
       onPress={() => !disabled && handlePress(input, meta, val, onPress)}
-      activeOpacity={!disabled ? 0.2 : 1}
+      disabled={disabled}
     >
       <View style={styles.wrap}>
         <View style={[

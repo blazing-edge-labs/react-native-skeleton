@@ -6,12 +6,8 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 import Label from 'components/Label'
 import InlineError from 'components/InlineError'
-import { hasError } from 'utils/validations'
-import { formatDate } from 'utils/formatDate'
+import { hasError } from 'utils/validator'
 import styles from './styles'
-
-// TODO: Check if bug has been fixed on Android when choosing a >2039 year
-// TODO: Disabled
 
 export class DatePicker extends Component {
   constructor (props) {
@@ -22,17 +18,16 @@ export class DatePicker extends Component {
 
   async showPicker () {
     const { input } = this.props
-    let options = Object.assign({}, { date: new Date(input.value), maxDate: moment().set('year', 2038).toDate(), mode: 'spinner' })
+    let options = Object.assign({}, { date: new Date(input.value), mode: 'spinner' })
 
     const { action, year, month, day } = await DatePickerAndroid.open(options)
     if (action !== DatePickerAndroid.dismissedAction) {
-      input.onChange(moment(`${year}-${month + 1}-${day}T12`, 'YYYYMMDDHH').format())
+      input.onChange(moment(`${year}-${month + 1}-${day}`, 'YYYY-MM-DD').format('YYYY-MM-DD'))
     }
   }
 
   render () {
-    const { label, input, meta } = this.props
-
+    const { label, input, meta, disabled } = this.props
     const isError = hasError(meta)
 
     return (
@@ -41,10 +36,12 @@ export class DatePicker extends Component {
           {label}
         </Label>
         <TouchableOpacity
-          onPress={this.showPicker}>
+          onPress={this.showPicker}
+          disabled={disabled}
+        >
           <View style={styles.holder}>
             <Text style={styles.dateText} >
-              {input.value ? formatDate(input.value) : 'Choose a date'}
+              {input.value ? input.value : 'Choose a date'}
             </Text>
             <Icon style={styles.icon} name='calendar' />
           </View>
@@ -61,7 +58,8 @@ DatePicker.propTypes = {
   meta: PropTypes.object.isRequired,
   required: PropTypes.bool,
   placeholder: PropTypes.string,
-  restriction: PropTypes.object
+  restriction: PropTypes.object,
+  disabled: PropTypes.bool
 }
 
 export default DatePicker

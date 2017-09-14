@@ -2,7 +2,7 @@ import React from 'react'
 import { Text } from 'react-native'
 import PropTypes from 'prop-types'
 
-import { hasError } from 'utils/validations'
+import { hasError } from 'utils/validator'
 import styles from './styles'
 
 const InlineError = ({ meta, error }) => (

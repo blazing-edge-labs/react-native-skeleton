@@ -2,13 +2,12 @@ import React, { Component } from 'react'
 import { View, TimePickerAndroid, TouchableOpacity, Text } from 'react-native'
 import PropTypes from 'prop-types'
 import moment from 'moment'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 import Label from 'components/Label'
 import InlineError from 'components/InlineError'
-import { hasError } from 'utils/validations'
+import { hasError } from 'utils/validator'
 import styles from './styles'
-
-// TODO: Add time icon
 
 export class TimePicker extends Component {
   constructor (props) {
@@ -44,6 +43,7 @@ export class TimePicker extends Component {
             <Text style={styles.dateText} >
               {input.value || 'Choose a time'}
             </Text>
+            <Icon style={styles.icon} name='clock-o' />
           </View>
         </TouchableOpacity>
         <InlineError meta={meta} />

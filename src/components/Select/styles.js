@@ -7,7 +7,7 @@ export default StyleSheet.create({
     flex: 1
   },
   holder: {
-    borderBottomColor: colors.borderInput,
+    borderBottomColor: 'black',
     borderBottomWidth: 1
   },
   text: {
@@ -15,7 +15,7 @@ export default StyleSheet.create({
     fontSize: sizes.font,
     textAlign: 'left',
     lineHeight: 40,
-    height: 40,
+    height: 40
   },
   picker: {
     color: colors.textInput,
@@ -30,5 +30,8 @@ export default StyleSheet.create({
   },
   modalContent: {
     backgroundColor: 'white'
+  },
+  disabled: {
+    opacity: 0.2
   }
 })

@@ -1201,13 +1201,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BuildingRN-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		79D3E7814C68DA9F490F1777 /* [CP] Copy Pods Resources */ = {
@@ -1216,9 +1219,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BuildingRN/Pods-BuildingRN-resources.sh",
+				"$PODS_CONFIGURATION_BUILD_DIR/QBImagePickerController/QBImagePicker.bundle",
+				"${PODS_ROOT}/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1324,7 +1331,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eastcoastproduct.reactnative.skeleton;
 				PRODUCT_NAME = BuildingRN;
-				PROVISIONING_PROFILE = "b429d11a-4048-4540-b376-a51783bf892d";
+				PROVISIONING_PROFILE = "383aa419-6712-431d-8559-241408cda8b6";
 				PROVISIONING_PROFILE_SPECIFIER = "RN Skeleton Ad Hoc";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1373,7 +1380,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eastcoastproduct.reactnative.skeleton;
 				PRODUCT_NAME = BuildingRN;
-				PROVISIONING_PROFILE = "b429d11a-4048-4540-b376-a51783bf892d";
+				PROVISIONING_PROFILE = "383aa419-6712-431d-8559-241408cda8b6";
 				PROVISIONING_PROFILE_SPECIFIER = "RN Skeleton Ad Hoc";
 				VERSIONING_SYSTEM = "apple-generic";
 			};

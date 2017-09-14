@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import { View, DatePickerIOS, TouchableOpacity, Modal, TouchableWithoutFeedback, Text } from 'react-native'
 import PropTypes from 'prop-types'
+import moment from 'moment'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import Label from 'components/Label'
 import InlineError from 'components/InlineError'
-import { formatDate } from 'utils/formatDate'
-import { hasError } from 'utils/validations'
+import { hasError } from 'utils/validator'
 import styles from './styles'
-
-// TODO: Disabled
 
 export class DatePicker extends Component {
   constructor (props) {
@@ -34,13 +32,11 @@ export class DatePicker extends Component {
   onDateChange (date) {
     const { input } = this.props
     this.setState({ date })
-    let theDate = new Date(date)
-    theDate = new Date(theDate.setHours(12))
-    input.onChange(theDate.toISOString())
+    input.onChange(moment(new Date(date), 'YYYY-MM-DD').format('YYYY-MM-DD'))
   }
 
   render () {
-    const { label, input, meta, type } = this.props
+    const { label, input, meta, type, disabled } = this.props
 
     const isError = hasError(meta)
 
@@ -51,7 +47,9 @@ export class DatePicker extends Component {
           visible={this.state.modal}
           animationType={'fade'}
         >
-          <TouchableWithoutFeedback onPress={() => this.setModal(false)}>
+          <TouchableWithoutFeedback
+            onPress={() => this.setModal(false)}
+            disabled={disabled}>
             <View style={styles.modal}>
               <View style={styles.modalContent}>
                 <DatePickerIOS
@@ -70,7 +68,7 @@ export class DatePicker extends Component {
           onPress={() => this.setModal(true)}>
           <View style={styles.holder}>
             <Text style={styles.dateText} >
-              {input.value ? formatDate(input.value) : 'Choose a date'}
+              {input.value ? input.value : 'Choose a date'}
             </Text>
             <Icon style={styles.icon} name='calendar' />
           </View>
@@ -84,7 +82,8 @@ export class DatePicker extends Component {
 DatePicker.defaultProps = {
   input: {
     value: new Date()
-  }
+  },
+  type: 'date'
 }
 
 DatePicker.propTypes = {
@@ -93,7 +92,8 @@ DatePicker.propTypes = {
   meta: PropTypes.object.isRequired,
   required: PropTypes.bool,
   placeholder: PropTypes.string,
-  restriction: PropTypes.object
+  restriction: PropTypes.object,
+  disabled: PropTypes.bool
 }
 
 export default DatePicker
