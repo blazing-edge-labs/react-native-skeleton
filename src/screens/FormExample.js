@@ -13,7 +13,7 @@ import Select from 'components/Select'
 import TextInput from 'components/TextInput'
 import TimePicker from 'components/TimePicker'
 import Radio from 'components/Radio'
-import { required, number } from 'utils/validations'
+import { required, number } from 'utils/validator'
 
 class FormExample extends Component {
   formSubmit (values) {
@@ -47,6 +47,7 @@ class FormExample extends Component {
           label='Number input'
           validate={[required, number]}
           component={TextInput}
+          keyboardType='phone-pad'
         />
         <Field
           name='testInput2'
@@ -129,8 +130,9 @@ class FormExample extends Component {
           options={options}
           component={Select}
           label='Select'
+          disabled
         />
-        <Field name='selectedValue'
+        <Field name='selectedValue2'
           options={options}
           component={Select}
           mode='dropdown'

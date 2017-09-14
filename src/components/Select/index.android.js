@@ -6,8 +6,6 @@ import Label from 'components/Label'
 import InlineError from 'components/InlineError'
 import styles from './styles'
 
-// TODO: Disabled
-
 class Select extends Component {
   constructor (props) {
     super(props)
@@ -38,12 +36,14 @@ class Select extends Component {
   }
 
   render () {
-    const { label, meta, options, mode } = this.props
+    const { label, meta, options, mode, disabled } = this.props
 
     return (
-      <View style={styles.wrap}>
+      <View style={[styles.wrap, disabled && styles.disabled]}>
         <Label>{label}</Label>
-        <View style={styles.holder}>
+        <View
+          pointerEvents={disabled ? 'none' : 'auto'}
+          style={styles.holder}>
           { options && <Picker
             style={styles.picker}
             selectedValue={this.state.value}
@@ -53,7 +53,7 @@ class Select extends Component {
               {this.renderItems(options)}
             </Picker>
           }
-          <View style={styles.bottomBorder} />
+          <View />
         </View>
         <InlineError meta={meta} />
       </View>
@@ -74,7 +74,8 @@ Select.propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired
   })),
-  mode: PropTypes.string
+  mode: PropTypes.string,
+  disabled: PropTypes.bool
 }
 
 export default Select

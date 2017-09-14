@@ -4,11 +4,10 @@ import PropTypes from 'prop-types'
 
 import styles from './styles'
 
-// TODO: Required missing
-
-const Label = ({ children, error }) => (
+const Label = ({ children, error, required }) => (
   <Text style={[styles.label, error && styles.error]}>
     {children}
+    {required && <Text> *</Text>}
   </Text>
 )
 
@@ -17,7 +16,8 @@ Label.propTypes = {
   error: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.string
-  ])
+  ]),
+  required: PropTypes.bool
 }
 
 export default Label

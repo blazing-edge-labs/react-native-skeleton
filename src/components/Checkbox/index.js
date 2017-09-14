@@ -3,10 +3,8 @@ import { View, TouchableOpacity, Text } from 'react-native'
 import PropTypes from 'prop-types'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import { isChecked } from 'utils/validations'
+import { isChecked } from 'utils/validator'
 import styles from './styles'
-
-// TODO: Talk with Andro, extra pixels
 
 const handlePress = (input, onPress) => {
   const { value } = input
@@ -21,7 +19,7 @@ const Checkbox = ({ input, onPress, label, disabled }) => {
   return (
     <TouchableOpacity
       onPress={() => !disabled && handlePress(input, onPress)}
-      activeOpacity={!disabled ? 0.2 : 1}
+      disabled={disabled}
     >
       <View style={styles.wrap}>
         <View style={[

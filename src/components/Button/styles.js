@@ -21,5 +21,8 @@ export default StyleSheet.create({
   },
   textDisabled: {
     color: '#DBDBDB'
+  },
+  error: {
+    borderColor: colors.error
   }
 })

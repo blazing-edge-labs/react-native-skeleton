@@ -6,9 +6,6 @@ import Label from 'components/Label'
 import InlineError from 'components/InlineError'
 import styles from './styles'
 
-// TODO: Disabled
-// TODO: Add dropdown arrow on the right side
-
 export class Select extends Component {
   constructor (props) {
     super(props)
@@ -55,7 +52,7 @@ export class Select extends Component {
   }
 
   render () {
-    const { label, input, meta, options } = this.props
+    const { label, input, meta, options, disabled } = this.props
 
     const findValue = item => item.value === input.value
     const val = options.find(findValue)
@@ -68,7 +65,8 @@ export class Select extends Component {
           visible={this.state.modal}
           animationType={'fade'}
         >
-          <TouchableWithoutFeedback onPress={() => this.setModal(false)}>
+          <TouchableWithoutFeedback
+            onPress={() => this.setModal(false)}>
             <View style={styles.modal}>
               <View style={styles.modalContent}>
                 { options && <Picker
@@ -83,7 +81,9 @@ export class Select extends Component {
           </TouchableWithoutFeedback>
         </Modal>
         <Label>{label}</Label>
-        <View style={styles.holder}>
+        <View
+          pointerEvents={disabled ? 'none' : 'auto'}
+          style={[styles.holder, disabled && styles.disabled]}>
           <Text style={styles.text} onPress={() => this.setModal(true)}>
             {theLabel}
           </Text>
@@ -101,7 +101,8 @@ Select.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired
-  }))
+  })),
+  disabled: PropTypes.bool
 }
 
 export default Select

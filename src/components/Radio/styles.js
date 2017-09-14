@@ -20,7 +20,9 @@ export default StyleSheet.create({
     borderWidth: 2,
     borderColor: 'black',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginLeft: 1,
+    marginTop: 1
   },
   inner: {
     height: 6,
@@ -29,7 +31,8 @@ export default StyleSheet.create({
     backgroundColor: 'white'
   },
   outerSelected: {
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    borderWidth: 0
   },
   outerDisabled: {
     borderColor: colors.disabledDarker

@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native'
-import { colors, sizes } from 'styles/variables'
+import { sizes } from 'styles/variables'
 
 export default StyleSheet.create({
   wrap: {
     flex: 1
   },
   holder: {
-    borderBottomColor: colors.borderInput,
+    borderBottomColor: 'black',
     borderBottomWidth: 1,
     flexDirection: 'row'
   },
@@ -22,5 +22,11 @@ export default StyleSheet.create({
   },
   modalContent: {
     backgroundColor: 'white'
+  },
+  icon: {
+    fontSize: 18,
+    color: 'black',
+    marginLeft: 10,
+    height: 20
   }
 })
