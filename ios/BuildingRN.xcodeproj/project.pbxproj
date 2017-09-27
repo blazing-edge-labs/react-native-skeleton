@@ -222,6 +222,20 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		A22AE3431F73DE6600BE3FBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A22AE3351F73DE6600BE3FBF /* RCTLinking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTLinking;
+		};
+		A22AE3451F73DE6600BE3FBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A22AE3351F73DE6600BE3FBF /* RCTLinking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28471D9B043800D4039D;
+			remoteInfo = "RCTLinking-tvOS";
+		};
 		A231015D1F504684009FA4BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 13FE6F916A1E430AA37DDCEA /* SMXCrashlytics.xcodeproj */;
@@ -368,6 +382,7 @@
 		8C9890BA31CB41BBA11A5175 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		946D4F3B2D13455D9F98EEC1 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		9CCAD8E27B33BEF696AD4497 /* Pods-BuildingRN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingRN.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingRN/Pods-BuildingRN.release.xcconfig"; sourceTree = "<group>"; };
+		A22AE3351F73DE6600BE3FBF /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		A2323D721F5E9EB700E727C6 /* RCTSmartKeyboard.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSmartKeyboard.xcodeproj; path = "../node_modules/@remobile/react-native-smart-keyboard/ios/RCTSmartKeyboard.xcodeproj"; sourceTree = "<group>"; };
 		A2558FC61F38735C0087E199 /* BuildingRN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BuildingRN.entitlements; path = BuildingRN/BuildingRN.entitlements; sourceTree = "<group>"; };
 		A2BC86301F50137C00314DAD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -557,6 +572,7 @@
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
+				A22AE3351F73DE6600BE3FBF /* RCTLinking.xcodeproj */,
 				00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */,
 				78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */,
 				00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */,
@@ -595,6 +611,7 @@
 				A2558FC71F38745B0087E199 /* Frameworks */,
 				A7FC0B59A7F5620E2D5ECFAA /* Pods */,
 				841C3CBFC0474D80B9CCA6ED /* Resources */,
+				A2C1DD6E1F72A0750051F12E /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -623,6 +640,15 @@
 				EC9B255DF0D9454093CFD0F2 /* Zocial.ttf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		A22AE3361F73DE6600BE3FBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A22AE3441F73DE6600BE3FBF /* libRCTLinking.a */,
+				A22AE3461F73DE6600BE3FBF /* libRCTLinking-tvOS.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A23101371F504684009FA4BC /* Products */ = {
@@ -707,6 +733,21 @@
 				A2BC86611F50164700314DAD /* libimageCropPicker.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A2C1DD6E1F72A0750051F12E /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				FF49F0AB65514140A0D8F672 /* libReactNativeConfig.a */,
+				AC7E02E71F494443988EAF7A /* libRCTOneSignal.a */,
+				1EA26CDE74AF456B8FA7587F /* libRNDocumentPicker.a */,
+				335814F2152B42E08F1750D9 /* libRNFetchBlob.a */,
+				45C227BED8B04DFE96EAE3E6 /* libimageCropPicker.a */,
+				7CBDCFA5674C457CA8C9A33B /* libSMXCrashlytics.a */,
+				A7B76E4D1B594E90A8B070E2 /* libRNVectorIcons.a */,
+				B3E89A7B97CA4E2A98641C7A /* libCodePush.a */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		A7FC0B59A7F5620E2D5ECFAA /* Pods */ = {
@@ -810,6 +851,10 @@
 				{
 					ProductGroup = 00C302BC1ABCB91800DB3ED1 /* Products */;
 					ProjectRef = 00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */;
+				},
+				{
+					ProductGroup = A22AE3361F73DE6600BE3FBF /* Products */;
+					ProjectRef = A22AE3351F73DE6600BE3FBF /* RCTLinking.xcodeproj */;
 				},
 				{
 					ProductGroup = 78C398B11ACF4ADC00677621 /* Products */;
@@ -1051,6 +1096,20 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		A22AE3441F73DE6600BE3FBF /* libRCTLinking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTLinking.a;
+			remoteRef = A22AE3431F73DE6600BE3FBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A22AE3461F73DE6600BE3FBF /* libRCTLinking-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTLinking-tvOS.a";
+			remoteRef = A22AE3451F73DE6600BE3FBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		A231015E1F504684009FA4BC /* libSMXCrashlytics.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1220,7 +1279,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BuildingRN/Pods-BuildingRN-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/QBImagePickerController/QBImagePicker.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/QBImagePickerController/QBImagePicker.bundle,
 				"${PODS_ROOT}/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle",
 			);
 			name = "[CP] Copy Pods Resources";

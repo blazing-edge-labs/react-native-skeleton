@@ -2,8 +2,11 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { reducer as formReducer } from 'redux-form'
 import thunk from 'redux-thunk'
 
+import auth from './auth'
+
 const reducers = combineReducers({
-  form: formReducer
+  form: formReducer,
+  auth
 })
 
 const store = compose(

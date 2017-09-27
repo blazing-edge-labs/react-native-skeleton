@@ -3,7 +3,8 @@ import { colors, sizes } from 'styles/variables'
 
 export default StyleSheet.create({
   wrap: {
-    width: 150,
+    minWidth: 150,
+    marginBottom: 20,
     backgroundColor: '#DBDBDB',
     borderWidth: 1,
     borderRadius: 2,

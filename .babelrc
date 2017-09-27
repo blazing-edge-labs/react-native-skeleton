@@ -6,7 +6,9 @@
       "alias": {
         "utils": "./src/utils",
         "components": "./src/components",
-        "styles": "./src/styles"
+        "styles": "./src/styles",
+        "constants": "./src/constants",
+        "actions": "./src/actions"
       },
       "extensions": [".js"]
     }]
