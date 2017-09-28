@@ -13,6 +13,7 @@ import Select from 'components/Select'
 import TextInput from 'components/TextInput'
 import TimePicker from 'components/TimePicker'
 import Radio from 'components/Radio'
+import CodePush from 'components/CodePush'
 import { required, number } from 'utils/validator'
 
 class FormExample extends Component {
@@ -42,6 +43,7 @@ class FormExample extends Component {
 
     return (
       <ScrollView style={{ flex: 1, margin: 10, marginBottom: 0 }}>
+        <CodePush />
         <Field
           name='testInput'
           label='Number input'
