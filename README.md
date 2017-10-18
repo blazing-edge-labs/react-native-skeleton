@@ -5,6 +5,15 @@ Because of complexity in the code introduced by some of the modules and frequent
 
 We are also publishing blog posts on how we use React Native in the company, read more about it here: [Essential React Native Setup](https://blog.blazingedge.io/essential-react-native-setup-5565662d0e56)
 
+## Installation
+First of all, make sure that you have packages installed by running installation by either npm or yarn: 
+
+`npm install`
+
+After that, depending on the platform you'd like the app to run on, write either 
+
+`react-native run-android` or `react-native run-ios`
+
 ## Modules used in this project
 ### Navigation
 [React Native Navigation](https://github.com/wix/react-native-navigation)
