@@ -52,6 +52,11 @@ public class MainApplication extends NavigationApplication {
         return getPackages();
     }
 
+  @Override
+    public String getJSMainModuleName() {
+        return "index";
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();

@@ -36,9 +36,9 @@
   self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions
                                                        appId:[ReactNativeConfig envFor:@"ONESIGNAL_ID"]];
 
-  
+
 #ifdef DEBUG
-    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 #else
     jsCodeLocation = [CodePush bundleURL];
 #endif
@@ -52,3 +52,4 @@
 }
 
 @end
+
